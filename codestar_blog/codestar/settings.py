@@ -25,8 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
-    'SECRET_KEY',
-    'django-insecure-(%en*a(n#an=b&eyw@znb2#zh!f3ysmxc8r7e9+==nbs&2^1^m'
+    "SECRET_KEY"
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -91,6 +90,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
