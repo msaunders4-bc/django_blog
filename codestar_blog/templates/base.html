@@ -1,4 +1,4 @@
-{% load static %} {% url 'home' as home_url %}
+{% load static %} {% url 'home' as home_url %} {% url 'about' as about_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -33,7 +33,6 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-
     </head>
 
     <body class="d-flex flex-column h-100 main-bg">
@@ -68,6 +67,14 @@
                                 >Home</a
                             >
                         </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == about_url %}active{%endif%}"
+                                aria-current="page"
+                                href="{% url 'about' %}"
+                                >About</a
+                            >
+                        </li>
                     </ul>
                     <span class="navbar-text text-muted">
                         adventures of a software developer
@@ -85,9 +92,8 @@
         <!-- Footer -->
         <footer class="footer mt-auto py-3 dark-bg">
             <p class="m-0 text-center text-white">
-                {% block copyright %}
-                Default
-                {% endblock copyright %}</p>
+                {% block copyright %} Default {% endblock copyright %}
+            </p>
             <p class="m-0 text-center text-white">
                 Follow us: <i class="fab fa-facebook-square ms-3"></i>
                 <i class="fab fa-twitter-square ms-3"></i>
@@ -103,3 +109,5 @@
         ></script>
 
         <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>
