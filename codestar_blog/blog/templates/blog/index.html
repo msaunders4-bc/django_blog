@@ -11,25 +11,12 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if post.featured_image and post.featured_image.url and "placeholder" in post.featured_image.url %}
-                                <img
-                                    class="card-img-top"
-                                    src="{% static 'images/default.jpg' %}"
-                                    alt="placeholder image"
-                                />
-                                {% elif post.featured_image and post.featured_image.url %}
-                                    <img
-                                    class="card-img-top"
-                                    src="{{ post.featured_image.url }}"
-                                    src="{{ post.featured_image.url }}"
-                                    />
-                                {% else %}
-                                    <img
-                                    class="card-img-top"
-                                    src="{% static 'images/default.jpg' %}"
-                                    alt="default image"
-                                    />
-                                {% endif %}
+                                {% if "placeholder" in post.featured_image.url %}
+        <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+           alt="placeholder image">
+        {% else %}
+        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+        {% endif %}
                                 <div class="image-flash">
                                     <p class="author">
                                         Author: {{ post.author }}
