@@ -1,1 +1,4 @@
 python-3.13
+
+
+CLOUDINARY_URL=cloudinary://561514683963398:SLjwDGkussZXTgymaXNPCx42QzY@dsrfitu28
